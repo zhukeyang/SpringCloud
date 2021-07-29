@@ -13,6 +13,7 @@
     <module>cloud-provider-payment8001</module>
       <module>cloud-consumer-order80</module>
       <module>cloud-api-commons</module>
+      <module>cloud-eureka-server7001</module>
   </modules>
 
   <name>Maven</name>
@@ -29,8 +30,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maveb.complier.source>1.8</maveb.complier.source>
-    <maveb.complier.target>1.8</maveb.complier.target>
+    <maveb.complier.source>9</maveb.complier.source>
+    <maveb.complier.target>9</maveb.complier.target>
     <junit.version>4.12</junit.version>
     <log4j.version>1.2.12</log4j.version>
     <lombok.version>1.16.18</lombok.version>
