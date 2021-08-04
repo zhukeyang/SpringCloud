@@ -27,18 +27,20 @@ public class OrderController
 
         return restTemplate.postForObject(PAYMENT_URL+"/payment/create",payment,CommonResult.class);
     }
+
     @GetMapping("/consumer/payment/get/{id}")
     public CommonResult<Payment> getPayment(@PathVariable("id") Long id)
     {
         return restTemplate.getForObject(PAYMENT_URL+"/payment/get/"+id,CommonResult.class);
     }
+
     @GetMapping("/consumer/payment/getForEntity/{id}")
     public CommonResult<Payment> getPayment2(@PathVariable("id") Long id)
     {
-        ResponseEntity entity=restTemplate.getForEntity(PAYMENT_URL+"/payment/getForEntity/"+id,CommonResult.class);
+        ResponseEntity<CommonResult> entity=restTemplate.getForEntity(PAYMENT_URL+"/payment/getForEntity/"+id,CommonResult.class);
         if(entity.getStatusCode().is2xxSuccessful())
         {
-            return (CommonResult<Payment>) entity.getBody();
+            return entity.getBody();
         }
         else
         {
