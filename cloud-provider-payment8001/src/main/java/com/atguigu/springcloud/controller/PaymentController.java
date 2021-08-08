@@ -45,7 +45,7 @@ public class PaymentController {
     public CommonResult getPaymentById(@PathVariable("id") Long id)
     {
         Payment payment = paymentService.getPaymentById(id);
-        log.info("******插入结果:"+payment);
+        log.info("******查询结果:"+payment);
         if(payment!=null)
         {
             return new CommonResult(200,"查询成功,server.port:"+serverPort,payment);
